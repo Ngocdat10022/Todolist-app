@@ -28,7 +28,11 @@ function App() {
     ]);
     setTextInput("");
   }, [textInput, todolist]);
-
+document.addEventListener('keydown',(e)=>{
+  if(e.keyCode === 13){
+    handlTodoList();
+  }
+})
   const checkBtnInput = useCallback((id) => {
     setTodolist((prev) =>
       prev.map((todo) =>
